@@ -12,16 +12,24 @@ class MoviesController < ApplicationController
   end
 
   def index
-    #@movies = Movie.all
+    @movies = Movie.all
     #@movie=Movie.order(:title)
-    @movies=Movie.order(:release_date)
+    #@movies=Movie.order(:release_date)
 
+    #dealing with highlighting
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
 
-    else
-        #@movies=Movie.all
+        if params[:sort_type]=="title"
+            @movies=Movie.order(:title)
+        else
+            @movies=Movie.order(:release_date)
+        end
     end
+
+
+
+
   end
 
   def new
