@@ -4,7 +4,9 @@ class Movie < ActiveRecord::Base
     end
 
     def self.Find_all_with_rating(all_ratings)
-        return Movie.all
+
+        return Movie.where(rating in all_ratings)
+        #return Movie.all
     end
 
 end
