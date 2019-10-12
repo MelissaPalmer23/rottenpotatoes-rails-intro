@@ -1,10 +1,5 @@
 class MoviesController < ApplicationController
 
-  #melissa
-  helper_method :sort_column
-  def sort_column
-    Movie.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  end
 
 
   def movie_params
@@ -19,7 +14,6 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
-    @sortedMovieTitle=Movie.order(sort_column)
   end
 
   def new
