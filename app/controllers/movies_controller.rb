@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
         #Using the Ratings from the session
         @SelectedRatings=@all_ratings
         #@SelectedRatings=session[:ratings]
-        redirect_to :sort_type="title", :ratings => @all_ratings and return
+        #redirect_to :sort_type="title", :ratings => @all_ratings and return
     else
         #selected rating isn't null
         @SelectedRatings=params[:ratings].keys
