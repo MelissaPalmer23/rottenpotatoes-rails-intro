@@ -26,8 +26,8 @@ class MoviesController < ApplicationController
     elsif @SelectedRatings.nil?
         #if just selected is nil
         #Using the Ratings from the session
-        #@SelectedRatings=@all_ratings
-        @SelectedRatings=session[:ratings]
+        @SelectedRatings=@all_ratings
+        #@SelectedRatings=session[:ratings]
         redirect_to :sort_type="title", :ratings => @all_ratings and return
     else
         #selected rating isn't null
