@@ -24,10 +24,11 @@ class MoviesController < ApplicationController
         #Using the Ratings from the session
         #@SelectedRatings=@all_ratings
         @SelectedRatings=session[:ratings]
-        redirect_to :ratings => @SelectedRatings
+        #redirect_to :ratings => @SelectedRatings
         #and redirect
     else
         @SelectedRatings=params[:ratings].keys
+        #This is new....
         session[:rating]=params[:ratings]
     end
 
