@@ -23,9 +23,9 @@ class MoviesController < ApplicationController
         @sort_type=params[:sort_type]
 
         if params[:sort_type]=="title"
-            @movies=Movie.order(:title)
+            @movies=@movies.order(:title)
         else
-            @movies=Movie.order(:release_date)
+            @movies=movies.order(:release_date)
         end
     end
 
