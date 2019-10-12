@@ -21,6 +21,7 @@ class MoviesController < ApplicationController
             @movies=Movie.order(:title)
         else
             @movies=Movie.order(:release)
+        end
     else
         @movies=Movie.all
     end
