@@ -30,6 +30,7 @@ class MoviesController < ApplicationController
     #dealing with checkboxes
     if (defined? params[:ratings])
         checked=params[:ratings].keys
+        puts checked
     end
 
 
