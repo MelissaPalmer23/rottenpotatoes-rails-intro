@@ -14,6 +14,11 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    SortBy=params["title"]
+    if SortBy=="title" or SortBy=="release":
+        @sort_type=SortBy
+    end
+
   end
 
   def new
