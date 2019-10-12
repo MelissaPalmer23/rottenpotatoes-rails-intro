@@ -39,18 +39,22 @@ class MoviesController < ApplicationController
     @movies=Movie.Find_all_with_rating(@SelectedRatings)
 
     #dealing with highlighting and sorting columns
+
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
-
         session[:sort_type]=params[:sort_type]
-
         if params[:sort_type]=="title"
             @movies=@movies.order(:title)
         else
             @movies=@movies.order(:release_date)
         end
-    else
-        @sort_type=session[:sort_type]
+    elsif (defined? session[:sort_type])
+        #Params didn't specify a sort type but there was one from session
+        if session[:sort_type]=="title"
+            @movies=@movies.order(:title)
+        else
+            @movies=@movies.order(:release_date)
+
     end
   end
 
