@@ -15,6 +15,8 @@ class MoviesController < ApplicationController
     #@movies = Movie.all
 
     @all_ratings=Movie.AllRatings
+    @SelectedRatings=Movie.SelectedRatings
+    @movies=Movie.Find_all_with_rating(@SelectedRatings)
 
     #dealing with highlighting and sorting columns
     if (defined? params[:sort_type])
@@ -28,8 +30,7 @@ class MoviesController < ApplicationController
     end
 
     #dealing with checkboxes
-    @all_ratings=["G"]
-    @movies=Movie.Find_all_with_rating(@all_ratings)
+
 
   end
 
