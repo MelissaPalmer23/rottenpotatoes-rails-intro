@@ -15,14 +15,10 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
 
+
     SortByWhat=params[:sort_type] || session[:sort_type]
 
-    if SortByWhat=="title"
-        @sort_type="title"
-    elsif SortByWhat=="release"
-        @sort_type="release"
-
-    #@sort_type="title"
+    @sort_type= :title
 
   end
 
