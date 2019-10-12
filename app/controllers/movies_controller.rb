@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
 
     @all_ratings=Movie.AllRatings
 
-    #dealing with highlighting
+    #dealing with highlighting and sorting columns
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
 
@@ -25,6 +25,11 @@ class MoviesController < ApplicationController
         else
             @movies=Movie.order(:release_date)
         end
+    end
+
+    #dealing with checkboxes
+    if (defined? params[:ratings])
+
     end
 
 
