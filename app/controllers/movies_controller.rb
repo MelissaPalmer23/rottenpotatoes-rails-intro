@@ -30,7 +30,6 @@ class MoviesController < ApplicationController
     #dealing with checkboxes
 
     @movies=Movie.Find_all_with_rating(@all_ratings)
-    what=@all_ratings.keys
 
 
   end

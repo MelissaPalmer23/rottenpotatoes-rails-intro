@@ -3,13 +3,12 @@ class Movie < ActiveRecord::Base
         return Movie.select(:rating).map(&:rating).uniq
     end
 
-    def self.Find_all_with_rating(HashMapOfRatings)
+    def self.Find_all_with_rating(Ratings)
         #
         #Rating=hashMapOfRatings.keys
 
-        Rating=HashMapOfRatings
 
-        #return Movie.where(:rating : Rating)
-        return Movie.all
+        return Movie.where(:rating : Ratings)
+        #return Movie.all
     end
 end
