@@ -12,9 +12,8 @@ class MoviesController < ApplicationController
   end
 
   def index
-    #@movies = Movie.all
 
-    #dealing with checkboxes
+    #working on session[]
 
     #This is so that the view includes those check boxes...
     @all_ratings=Movie.AllRatings
@@ -22,9 +21,14 @@ class MoviesController < ApplicationController
     #This is so that you filter based on those ratings.
     @SelectedRatings=params[:ratings]
     if @SelectedRatings.nil?
-        @SelectedRatings=@all_ratings
+        #Using the Ratings from the session
+        #@SelectedRatings=@all_ratings
+        @SelectedRatings=session[:ratings]
+        redirect_to :ratings => @SelectedRatings
+        #and redirect
     else
         @SelectedRatings=params[:ratings].keys
+        session[:rating]=params[:ratings]
     end
 
     @movies=Movie.Find_all_with_rating(@SelectedRatings)
