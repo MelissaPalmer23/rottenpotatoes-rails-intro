@@ -49,10 +49,9 @@ class MoviesController < ApplicationController
         else
             @movies=@movies.order(:release_date)
         end
+    else
+        @sort_type=session[:sort_type]
     end
-
-
-
   end
 
   def new
