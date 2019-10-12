@@ -54,6 +54,7 @@ class MoviesController < ApplicationController
             @movies=@movies.order(:title)
         else
             @movies=@movies.order(:release_date)
+        end
 
     end
   end
