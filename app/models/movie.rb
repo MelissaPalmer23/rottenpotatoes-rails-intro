@@ -7,7 +7,7 @@ class Movie < ActiveRecord::Base
         #
         Rating=hashMapOfRatings.keys
 
-        return Movie.where(:rating : Rating)
-        #return Movie.all
+        #return Movie.where(:rating : Rating)
+        return Movie.all
     end
 end
