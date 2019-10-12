@@ -13,8 +13,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
-    #@movie=Movie.order(:title)
-    #@movies=Movie.order(:release_date)
+
+    @all_ratings=["G", "PG", "PG-13", "R"]
 
     #dealing with highlighting
     if (defined? params[:sort_type])
