@@ -15,7 +15,13 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
 
-    @sort_type= :title
+    Movie.column_names.include?(params[:sort_by]):
+        @sort_type="title"
+    end
+
+
+    #@sort_type= "release"
+    #@sort_type="title"
 
   end
 
