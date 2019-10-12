@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
 
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
-        @movies=Movie.order(params[:sort_type])
+        #@movies=Movie.order(params[:sort_type])
     end
 
   end
