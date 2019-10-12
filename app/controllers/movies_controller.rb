@@ -15,7 +15,6 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
 
-
     SortByWhat=params[:sort_type] || session[:sort_type]
 
     @sort_type= :title
