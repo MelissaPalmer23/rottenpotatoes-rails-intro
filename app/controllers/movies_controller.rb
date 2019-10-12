@@ -20,8 +20,6 @@ class MoviesController < ApplicationController
     @all_ratings=Movie.AllRatings
 
     #This is so that you filter based on those ratings.
-    #@SelectedRatings=Movie.SelectedRatings
-    #@movies=Movie.Find_all_with_rating(@SelectedRatings)
     @SelectedRatings=params[:ratings]
     if @SelectedRatings.nil?
         @SelectedRatings=@all_ratings
