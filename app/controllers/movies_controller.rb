@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
         @sort_type=params[:sort_type]
         @movies.order(params[:sort_type])
     else
-        @moves=Movie.all
+        @movies=Movie.all
      end
   end
 
