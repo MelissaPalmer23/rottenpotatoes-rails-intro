@@ -15,8 +15,20 @@ class MoviesController < ApplicationController
     #@movies = Movie.all
 
     #dealing with checkboxes
+
+    #This is so that the view includes those check boxes...
     @all_ratings=Movie.AllRatings
-    @SelectedRatings=Movie.SelectedRatings
+
+    #This is so that you filter based on those ratings.
+    #@SelectedRatings=Movie.SelectedRatings
+    #@movies=Movie.Find_all_with_rating(@SelectedRatings)
+    @SelectedRatings=params[:ratings]
+    if @SelectedRatings.nil?
+        @SelectedRatings=@all_ratings
+    else
+        @SelectedRatings=params[:ratings].keys
+    end
+
     @movies=Movie.Find_all_with_rating(@SelectedRatings)
 
     #dealing with highlighting and sorting columns
