@@ -13,9 +13,9 @@
       %th Rating
 
       - if @sort_type == 'release'
-        %th.hilite= link_to "Release Date", movies_path(:sort_type => "release"), id:"release_header"
+        %th.hilite= link_to "Release Date", movies_path(:sort_type => "release"), id:"release_date_header"
       - else
-        %th= link_to "Release Date", movies_path(:sort_type =>"release"), id:"release_header"
+        %th= link_to "Release Date", movies_path(:sort_type =>"release"), id:"release_date_header"
 
       %th More Info
   %tbody
