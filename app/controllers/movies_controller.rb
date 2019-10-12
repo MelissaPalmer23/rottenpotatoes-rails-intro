@@ -19,11 +19,11 @@ class MoviesController < ApplicationController
     @all_ratings=Movie.AllRatings
 
     #This is so that you filter based on those ratings.
-    @SelectedRatings=params[:ratings] || session[:ratings]
+    @SelectedRatings=params[:ratings]
     if @SelectedRatings.nil?
         #Using the Ratings from the session
-        #@SelectedRatings=@all_ratings
-        @SelectedRatings=session[:ratings]
+        @SelectedRatings=@all_ratings
+        #@SelectedRatings=session[:ratings]
         #redirect_to :ratings => @SelectedRatings
         #and redirect
     else
@@ -37,6 +37,8 @@ class MoviesController < ApplicationController
     #dealing with highlighting and sorting columns
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
+
+        session[:sort_type]=params[:sort_type]
 
         if params[:sort_type]=="title"
             @movies=@movies.order(:title)
