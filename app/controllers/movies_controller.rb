@@ -14,6 +14,7 @@ class MoviesController < ApplicationController
   def index
     #@movies = Movie.all
 
+    #dealing with checkboxes
     @all_ratings=Movie.AllRatings
     @SelectedRatings=Movie.SelectedRatings
     @movies=Movie.Find_all_with_rating(@SelectedRatings)
@@ -25,11 +26,10 @@ class MoviesController < ApplicationController
         if params[:sort_type]=="title"
             @movies=@movies.order(:title)
         else
-            @movies=movies.order(:release_date)
+            @movies=@movies.order(:release_date)
         end
     end
 
-    #dealing with checkboxes
 
 
   end
