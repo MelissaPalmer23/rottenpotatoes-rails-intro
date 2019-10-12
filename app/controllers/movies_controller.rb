@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
 
 
-
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
   end
@@ -13,7 +12,8 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    #@movies = Movie.all
+    @movies=Movie.order(:title)
 
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
@@ -48,5 +48,6 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
+
 
 end
