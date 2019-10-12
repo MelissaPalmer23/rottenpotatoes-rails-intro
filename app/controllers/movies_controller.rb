@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
 
-
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
   end
@@ -27,9 +26,9 @@ class MoviesController < ApplicationController
     elsif @SelectedRatings.nil?
         #if just selected is nil
         #Using the Ratings from the session
-        @SelectedRatings=@all_ratings
-        #@SelectedRatings=session[:ratings]
-        #redirect_to :ratings => @SelectedRatings
+        #@SelectedRatings=@all_ratings
+        @SelectedRatings=session[:ratings]
+        redirect_to :ratings => @all_ratings and return
     else
         #selected rating isn't null
         @SelectedRatings=params[:ratings].keys
@@ -47,6 +46,7 @@ class MoviesController < ApplicationController
             @movies=@movies.order(:title)
         else
             @movies=@movies.order(:release_date)
+
         end
     elsif (defined? session[:sort_type])
         #Params didn't specify a sort type but there was one from session
