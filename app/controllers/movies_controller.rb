@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
 
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
-        if @sort_type=="title"
+        if params[:sort_type]=="title"
             @movies=Movie.order(:title)
         else
             @movies=Movie.order(:release)
