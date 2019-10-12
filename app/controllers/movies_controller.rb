@@ -19,8 +19,6 @@ class MoviesController < ApplicationController
         @sort_type=params[:sort_type]
     end
 
-    #@sort_type= "release"
-    #@sort_type="title"
 
   end
 
