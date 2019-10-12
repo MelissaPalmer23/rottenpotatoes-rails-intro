@@ -20,15 +20,19 @@ class MoviesController < ApplicationController
 
     #This is so that you filter based on those ratings.
     @SelectedRatings=params[:ratings]
-    if @SelectedRatings.nil?
-        #Using the Ratings from the session
+
+    if params[:ratings].nil? and session[:ratings].nil?
+        #if both selected and session rating is nill
         @SelectedRatings=@all_ratings
-        #@SelectedRatings=session[:ratings]
+    elsif @SelectedRatings.nil?
+        #if just selected is nil
+        #Using the Ratings from the session
+        #@SelectedRatings=@all_ratings
+        @SelectedRatings=session[:ratings]
         #redirect_to :ratings => @SelectedRatings
-        #and redirect
     else
+        #selected rating isn't null
         @SelectedRatings=params[:ratings].keys
-        #This is new....
         session[:ratings]=params[:ratings]
     end
 
