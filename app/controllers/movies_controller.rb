@@ -31,7 +31,6 @@ class MoviesController < ApplicationController
 
     @movies=Movie.Find_all_with_rating(@all_ratings)
 
-
   end
 
   def new
