@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    #@movies = Movie.all
 
     @all_ratings=Movie.AllRatings
 
@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
 
     #dealing with checkboxes
 
-    #@movies=Movie.Find_all_with_rating(@all_ratings)
+    @movies=Movie.Find_all_with_rating(@all_ratings)
 
   end
 
