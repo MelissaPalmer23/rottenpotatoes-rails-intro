@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
     else
         @SelectedRatings=params[:ratings].keys
         #This is new....
-        session[:rating]=params[:ratings].keys
+        session[:ratings]=params[:ratings].keys
     end
 
     @movies=Movie.Find_all_with_rating(@SelectedRatings)
