@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
     @all_ratings=Movie.AllRatings
 
     #This is so that you filter based on those ratings.
-    @SelectedRatings=params[:ratings]
+    @SelectedRatings=params[:ratings] || session[:ratings]
     if @SelectedRatings.nil?
         #Using the Ratings from the session
         #@SelectedRatings=@all_ratings
