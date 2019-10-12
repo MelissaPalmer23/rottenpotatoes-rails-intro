@@ -50,6 +50,7 @@ class MoviesController < ApplicationController
         end
     elsif (defined? session[:sort_type])
         #Params didn't specify a sort type but there was one from session
+        @sort_type=session[:sort_type]
         if session[:sort_type]=="title"
             @movies=@movies.order(:title)
         else
