@@ -3,7 +3,7 @@ class Movie < ActiveRecord::Base
         return Movie.select(:rating).map(&:rating).uniq
     end
 
-    def self.find_all_with_rating
+    def self.Find_all_with_rating(arg1)
         return Movie.all
     end
 end
