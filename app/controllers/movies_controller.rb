@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
 
     SortByWhat=params[:sort_type]
 
-    if SortByWhat=="title":
+    if SortByWhat=="title"
         @sort_type="title"
     elsif SortByWhat=="release"
         @sort_type="release"
