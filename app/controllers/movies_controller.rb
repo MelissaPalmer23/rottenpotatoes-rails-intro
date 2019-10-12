@@ -13,7 +13,8 @@ class MoviesController < ApplicationController
 
   def index
     #@movies = Movie.all
-    @movies=Movie.order(:title)
+    #@movie=Movie.order(:title)
+    @movies=Movie.order(:release)
 
     if (defined? params[:sort_type])
         @sort_type=params[:sort_type]
