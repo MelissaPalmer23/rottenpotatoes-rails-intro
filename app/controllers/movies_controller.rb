@@ -22,8 +22,8 @@ class MoviesController < ApplicationController
     @SelectedRatings=params[:ratings]
     if @SelectedRatings.nil?
         #Using the Ratings from the session
-        #@SelectedRatings=@all_ratings
-        @SelectedRatings=session[:ratings]
+        @SelectedRatings=@all_ratings
+        #@SelectedRatings=session[:ratings]
         #redirect_to :ratings => @SelectedRatings
         #and redirect
     else
